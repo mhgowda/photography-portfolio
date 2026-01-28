@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Camcraft Photography - Professional portrait, street, nature, and event photography. Cinematic moments captured with artistic vision.">
+    <meta name="keywords" content="photography, portraits, street photography, nature, events, professional photographer">
+    <meta name="author" content="Manu - Camcraft Photography">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://camcraft-photography.com/">
+    <meta property="og:title" content="Camcraft Photography | Cinematic Moments Captured">
+    <meta property="og:description" content="Professional photography services - portraits, street, nature, and events. Cinematic storytelling through the lens.">
+    <meta property="og:image" content="https://camcraft-photography.com/images/logo/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://camcraft-photography.com/">
+    <meta property="twitter:title" content="Camcraft Photography | Cinematic Moments Captured">
+    <meta property="twitter:description" content="Professional photography services - portraits, street, nature, and events.">
+    <meta property="twitter:image" content="https://camcraft-photography.com/images/logo/logo.png">
+
+    <title>Camcraft Photography | Cinematic Moments Captured</title>
+    
+    <!-- Favicon - Using your uploaded icon -->
+    <link rel="icon" type="image/png" href="images/favicon/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon/favicon.png">
+    <link rel="shortcut icon" href="images/favicon/favicon.png">
+    
+    <!-- Preconnect to external domains for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Load fonts with display=swap for better performance -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS inline for above-the-fold content -->
+    <style>
+        /* Critical CSS - Above the fold styles only */
+        :root {
+            --color-dark: #1a1a1a;
+            --color-light: #f5f5f5;
+            --color-grey-dark: #2d2d2d;
+            --color-grey-accent: #7a7a7a;
+            --color-accent: #b8860b;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.98) 100%), url('images/bg.jpg') center/cover no-repeat;
+            color: var(--color-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation - Critical for first paint */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--color-light);
+            text-decoration: none;
+        }
+
+        /* Hero - Critical for first paint */
+        .hero {
+            margin-top: 70px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            animation: fadeInUp 1s ease 0.3s both;
+            padding: 0 2rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            color: var(--color-grey-accent);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--color-accent);
+            color: var(--color-dark);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: 2px solid var(--color-accent);
+        }
+
+        /* Lazy loading placeholder */
+        .lazy {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .lazy.loaded {
+            opacity: 1;
+        }
+    </style>
+    
+    <!-- Load main CSS after critical styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="dark-mode">
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <img src="images/logo/logo.png" alt="Camcraft Photography" class="logo-image" style="display: none;">
+                <span class="logo-text">LENS</span>
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="dark-mode-toggle" title="Toggle dark/light mode">🌙</button>
+            <button class="menu-toggle" title="Toggle menu">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Camcraft Photography</h1>
+            <p class="hero-tagline">Cinematic portraits, campus stories & street moments</p>
+            <a href="#gallery" class="cta-button">Explore My Work</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <h2 class="section-title">Portfolio</h2>
+        
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="portrait">Portraits</button>
+            <button class="filter-btn" data-filter="street">Street</button>
+            <button class="filter-btn" data-filter="nature">Nature</button>
+            <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+            <button class="filter-btn" data-filter="travel">Travel</button>
+        </div>
+
+        <div class="gallery-grid" id="gallery-grid">
+            <!-- Gallery items will be dynamically inserted -->
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about" style="background: var(--color-grey-dark);">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="images/about/WhatsApp Image 2026-01-28 at 12.25.45 PM.jpeg" alt="Manu - Camcraft Photography">
+            </div>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>
+                    I’m Manu, the eye behind Camcraft Photography — a visual storyteller dedicated to turning everyday moments into cinematic frames you’ll want to revisit forever.
+                </p>
+                <p>
+                    I blend street, portrait, campus and travel photography with natural light and candid emotion, creating images that feel real, raw and personal. Every frame is crafted to reflect your story, not just a pose.
+                </p>
+                <div class="about-stats">
+                    <div class="about-stat-item">
+                        <div class="about-stat-number">4+ yrs</div>
+                        <div class="about-stat-label">Professional Experience</div>
+                    </div>
+                    <div class="about-stat-item">
+                        <div class="about-stat-number">50+</div>
+                        <div class="about-stat-label">Sessions Shot</div>
+                    </div>
+                    <div class="about-stat-item">
+                        <div class="about-stat-number">10+</div>
+                        <div class="about-stat-label">Campus / Events</div>
+                    </div>
+                </div>
+                
+                <div class="about-social">
+                    <h3>Connect with Me</h3>
+                    <div class="about-social-links">
+                        <a href="https://www.instagram.com/manu_._._gowda?igsh=MWNtazN5ZnRxN3FjeQ==" target="_blank" class="about-social-link">
+                            <span class="social-icon">📱</span>
+                            <div class="social-info">
+                                <div class="social-title">Personal Instagram</div>
+                                <div class="social-handle">@manu_._._gowda</div>
+                            </div>
+                        </a>
+                        <a href="https://www.instagram.com/camcraft_photography?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="about-social-link">
+                            <span class="social-icon">📸</span>
+                            <div class="social-info">
+                                <div class="social-title">Photography Portfolio</div>
+                                <div class="social-handle">@camcraft_photography</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+        <h2 class="section-title">Services</h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>📸 Event Photography</h3>
+                <p>
+                    Capture the essence of your special moments with professional coverage of weddings, corporate events, and celebrations. Full-day coverage with high-resolution images.
+                </p>
+                <a href="#contact" class="cta-button" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">Inquire</a>
+            </div>
+            <div class="service-card">
+                <h3>👤 Portrait Sessions</h3>
+                <p>
+                    Professional portrait photography for individuals, families, and professionals. Outdoor and studio sessions available with personalized styling consultation included.
+                </p>
+                <a href="#contact" class="cta-button" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">Inquire</a>
+            </div>
+            <div class="service-card">
+                <h3>🎓 Campus Coverage</h3>
+                <p>
+                    Document college events, festivals, and campus life with dynamic photography. Perfect for yearbooks, social media, and institutional records.
+                </p>
+                <a href="#contact" class="cta-button" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">Inquire</a>
+            </div>
+            <div class="service-card">
+                <h3>🦅 Wildlife Photography</h3>
+                <p>
+                    Specialized in capturing birds, animals, and wildlife in their natural habitat. Patient approach to get stunning shots of nature's most beautiful creatures.
+                </p>
+                <a href="#contact" class="cta-button" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">Inquire</a>
+            </div>
+            <div class="service-card">
+                <h3>🎨 Editing & Retouching</h3>
+                <p>
+                    Professional photo editing, color grading, and retouching. Transform your photos with my expert post-processing techniques and artistic vision.
+                </p>
+                <a href="#contact" class="cta-button" style="font-size: 0.9rem; padding: 0.75rem 1.5rem;">Inquire</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials" style="background: var(--color-grey-dark);">
+        <h2 class="section-title">Client Stories</h2>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    Manu has been our go-to creative professional for 4 years! His expertise in editing, design, and photography has elevated our sports club's visual content significantly. From event coverage to promotional materials, his work consistently exceeds expectations. Truly reliable and talented!
+                </p>
+                <div class="testimonial-author">
+                    <a href="https://www.instagram.com/rnsit_sports_club?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="client-link">
+                        RNSIT Sports Club (RSC)
+                    </a>
+                </div>
+                <div class="testimonial-role">RNS Institute of Technology</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    Working with Manu for our institutional content was exceptional! The videos he created for our website and social media perfectly captured our college's essence. His professional approach and creative vision make him invaluable for educational institutions.
+                </p>
+                <div class="testimonial-author">
+                    <a href="https://www.instagram.com/rnsit_bengaluru?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="client-link">
+                        RNS Institute of Technology
+                    </a>
+                </div>
+                <div class="testimonial-role">Top Engineering College, Bangalore</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    Working with Manu for 3 months was incredible! The content he created for my Instagram elevated my entire brand. His eye for detail and understanding of social media aesthetics helped my engagement grow significantly. Professional, creative, and always delivers on time!
+                </p>
+                <div class="testimonial-author">
+                    <a href="https://www.instagram.com/legallyfitjoshiba?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="client-link">
+                        @legallyfitjoshiba
+                    </a>
+                </div>
+                <div class="testimonial-role">Legal Professional & Fitness Influencer</div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">
+                    Manu's comprehensive coverage of our national art exhibition was exceptional! From documenting artworks to celebrity coverage and social media content, he handled everything with utmost professionalism. His ability to capture high-profile events is remarkable.
+                </p>
+                <div class="testimonial-author">
+                    <a href="https://www.instagram.com/the_haat_of_art?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="client-link">
+                        The Haat of Art
+                    </a>
+                </div>
+                <div class="testimonial-role">National Art Exhibition</div>
+                <div class="testimonial-proof">
+                    <a href="https://www.instagram.com/p/DFQZ1rozoGQ/?igsh=ZWRoMnNscm1meHVh" target="_blank" class="proof-link">
+                        📸 View Our Collaboration Post
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <p>Ready to capture your moments? Let's collaborate!</p>
+                <div class="contact-links">
+                    <a href="mailto:mhgowda845@gmail.com?subject=Photography%20Inquiry&body=Hi%20Manu,%0D%0A%0D%0AI'm%20interested%20in%20your%20photography%20services.%20Please%20let%20me%20know%20your%20availability%20and%20pricing.%0D%0A%0D%0AThank%20you!" class="contact-link">
+                        📧 mhgowda845@gmail.com
+                    </a>
+                    <a href="https://www.instagram.com/camcraft_photography?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="contact-link">
+                        📸 Instagram
+                    </a>
+                    <a href="https://wa.me/919008942845?text=Hi%20Manu!%20I%20saw%20your%20photography%20portfolio%20and%20I'm%20interested%20in%20booking%20a%20session.%20Could%20you%20please%20share%20your%20availability%20and%20pricing?" target="_blank" class="contact-link">
+                        💬 WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contact-form" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Interested In</label>
+                    <select id="service" name="service">
+                        <option value="">Select a service</option>
+                        <option value="portrait">Portrait Session</option>
+                        <option value="event">Event Photography</option>
+                        <option value="campus">Campus Coverage</option>
+                        <option value="wildlife">Wildlife Photography</option>
+                        <option value="editing">Photo Editing</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required placeholder="Tell me about your photography needs, preferred dates, location, etc."></textarea>
+                </div>
+                <button type="submit" class="form-submit">💬 Send via WhatsApp</button>
+                <div class="form-message" id="form-message"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+            <button class="lightbox-nav lightbox-prev" onclick="prevImage()">‹</button>
+            <img id="lightbox-image" class="lightbox-image" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="nextImage()">›</button>
+            <div class="lightbox-info" id="lightbox-info"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">
+            <img src="images/logo/logo.png" alt="Camcraft Photography" class="footer-logo-image">
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/camcraft_photography?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" title="Instagram">📸</a>
+            <a href="https://x.com/Manugowda__" target="_blank" title="Twitter / X">𝕏</a>
+            <a href="https://www.linkedin.com/in/m-h-manu-b314ab255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" title="LinkedIn">💼</a>
+        </div>
+        <p class="footer-text">&copy; 2026 Your Photography. All rights reserved. | Designed with ❤️</p>
+    </footer>
+
+    <!-- Load JavaScript with defer for better performance -->
+    <script src="js/imageOptimizer.js" defer></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>
